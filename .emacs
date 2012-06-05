@@ -15,13 +15,6 @@
 (load "key-bindings.el")
 ;----------------------------------------------------------;
 
-;; slime sbcl config
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(add-to-list 'load-path "/usr/share/common-lisp/source/slime")
-(require 'slime-autoloads)
-(slime-setup '(slime-fancy))
-;(slime-setup)
-
 ; solve the hang problem
 (add-hook 'sldb-mode-hook #'(lambda () (setq autopair-dont-activate t)))
 ;----------------------------------------------------------;
