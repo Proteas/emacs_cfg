@@ -134,6 +134,15 @@
 
 ;; default window size and position
 (setq default-frame-alist '((top . 5) (left . 145) (width . 138) (height . 55)))
+
+;; other way
+;(defun arrange-frame (w h x y)
+;  "Set the width, height, and x/y position of the current frame"
+;  (let ((frame (selected-frame)))
+;    (delete-other-windows)
+;    (set-frame-position frame x y)
+;    (set-frame-size frame w h)))
+;(arrange-frame 150 60 700 80)
 ;----------------------------------------------------------;
 
 ;; font size
