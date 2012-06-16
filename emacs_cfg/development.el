@@ -55,3 +55,16 @@
 ;(slime-setup)
 ;----------------------------------------------------------;
 
+;; sr-speedbar
+
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side t)
+(setq sr-speedbar-width 30)
+(setq speedbar-show-unknown-files t)
+(setq dframe-update-speed t) ; prevent the speedbar to update the current state, since it is always changing
+
+(global-set-key (kbd "<f11>") (lambda()
+          (interactive)
+          (sr-speedbar-toggle)))
+
+
