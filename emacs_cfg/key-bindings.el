@@ -7,3 +7,10 @@
 
 (global-set-key (kbd "<f12>") 'proteas-ecb-active-or-deactive)
 ;----------------------------------------------------------;
+
+;; show speedbar
+(global-set-key (kbd "<f11>") (lambda()
+          (interactive)
+          (sr-speedbar-toggle)))
+;----------------------------------------------------------;
+
