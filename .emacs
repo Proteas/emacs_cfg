@@ -5,8 +5,8 @@
 ;;---------------------------------------------------------;;
 
 ;; search paths
-(add-to-list 'load-path "/home/proteas/emacs_cfg")
-(add-to-list 'load-path "/home/proteas/emacs_cfg/plugins")
+(add-to-list 'load-path "~/emacs_cfg")
+(add-to-list 'load-path "~/emacs_cfg/plugins")
 ;----------------------------------------------------------;
 
 (load "base.el")
