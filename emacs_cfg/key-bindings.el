@@ -5,11 +5,11 @@
       (ecb-deactivate)
       (ecb-activate)))
 
-(global-set-key (kbd "<f12>") 'proteas-ecb-active-or-deactive)
+(global-set-key (kbd "<C-f12>") 'proteas-ecb-active-or-deactive)
 ;----------------------------------------------------------;
 
 ;; show speedbar
-(global-set-key (kbd "<f11>") (lambda()
+(global-set-key (kbd "<C-f11>") (lambda()
           (interactive)
           (sr-speedbar-toggle)))
 ;----------------------------------------------------------;

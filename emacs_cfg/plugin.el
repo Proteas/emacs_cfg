@@ -1,5 +1,5 @@
 ;; load libs
-(add-to-list 'load-path "/home/proteas/emacs_cfg/color-theme-6.6.0")
+(add-to-list 'load-path "~/emacs_cfg/color-theme-6.6.0")
 ;----------------------------------------------------------;
 
 ;; color theme config
