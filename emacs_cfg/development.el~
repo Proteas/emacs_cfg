@@ -130,7 +130,7 @@
 
 ;; golang
 (add-to-list 'load-path "~/emacs_cfg/golang")
-(require 'go-mode-load)
+
 ;----------------------------------------------------------;
 
 ;; slime sbcl config
