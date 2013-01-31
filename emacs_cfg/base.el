@@ -133,7 +133,12 @@
 ;----------------------------------------------------------;
 
 ;; default window size and position
-(setq default-frame-alist '((top . 5) (left . 145) (width . 138) (height . 55)))
+(if (eq system-type 'darwin)
+    ; for mac os x
+    (setq default-frame-alist '((top . 0) (left . 0) (width . 150) (height . 60)))
+  (setq default-frame-alist '((top . 5) (left . 145) (width . 138) (height . 55)))
+)
+
 
 ;; other way
 ;(defun arrange-frame (w h x y)
@@ -146,7 +151,11 @@
 ;----------------------------------------------------------;
 
 ;; font size
-(set-face-attribute 'default nil :height 180)
+(if (eq system-type 'darwin)
+    ; for mac os x
+    (set-face-attribute 'default nil :height 160)
+  (set-face-attribute 'default nil :height 180)
+)
 ;----------------------------------------------------------;
 
 ;; set fill column
