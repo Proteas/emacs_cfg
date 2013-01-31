@@ -134,10 +134,10 @@
 ;----------------------------------------------------------;
 
 ;; slime sbcl config
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(add-to-list 'load-path "/usr/share/common-lisp/source/slime")
-(require 'slime-autoloads)
-(slime-setup '(slime-fancy))
+;(setq inferior-lisp-program "/usr/bin/sbcl")
+;(add-to-list 'load-path "/usr/share/common-lisp/source/slime")
+;(require 'slime-autoloads)
+;(slime-setup '(slime-fancy))
 ;(slime-setup)
 ;----------------------------------------------------------;
 
