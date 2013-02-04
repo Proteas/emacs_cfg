@@ -1,6 +1,6 @@
 ;; load libs
 (add-to-list 'load-path "~/emacs_cfg/ecb-2.40")
-(load-file "~/emacs_cfg/cedet-1.0.1/common/cedet.el")
+(load-file "~/emacs_cfg/cedet-1.1/common/cedet.el")
 (add-to-list 'load-path "~/emacs_cfg/yasnippet-0.6.1c")
 ;----------------------------------------------------------;
 
@@ -96,6 +96,7 @@
 (require 'ecb)
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil)
+(setq stack-trace-on-error t)
 ;----------------------------------------------------------;
 
 ;; gdb mand windows

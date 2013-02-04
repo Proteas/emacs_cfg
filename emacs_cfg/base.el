@@ -135,7 +135,7 @@
 ;; default window size and position
 (if (eq system-type 'darwin)
     ; for mac os x
-    (setq default-frame-alist '((top . 0) (left . 0) (width . 150) (height . 60)))
+    (setq default-frame-alist '((top . 5) (left . 5) (width . 139) (height . 39)))
   (setq default-frame-alist '((top . 5) (left . 145) (width . 138) (height . 55)))
 )
 
