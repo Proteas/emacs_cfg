@@ -99,6 +99,10 @@
 (setq stack-trace-on-error t)
 ;----------------------------------------------------------;
 
+;; disable stickyfunc-mode
+(global-semantic-stickyfunc-mode nil)
+;----------------------------------------------------------;
+
 ;; gdb mand windows
 (setq gdb-many-windows t)
 (load-library "multi-gud.el")
