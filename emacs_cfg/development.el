@@ -139,11 +139,11 @@
 ;----------------------------------------------------------;
 
 ;; slime sbcl config
-;(setq inferior-lisp-program "/usr/bin/sbcl")
-;(add-to-list 'load-path "/usr/share/common-lisp/source/slime")
-;(require 'slime-autoloads)
-;(slime-setup '(slime-fancy))
-;(slime-setup)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(add-to-list 'load-path "~/emacs_cfg/slime")
+(require 'slime-autoloads)
+(slime-setup '(slime-fancy))
+(slime-setup)
 ;----------------------------------------------------------;
 
 ;; sr-speedbar
