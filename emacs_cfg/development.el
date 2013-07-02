@@ -143,7 +143,7 @@
 (add-to-list 'load-path "~/emacs_cfg/slime")
 (require 'slime-autoloads)
 (slime-setup '(slime-fancy))
-(slime-setup)
+;(slime-setup)
 ;----------------------------------------------------------;
 
 ;; sr-speedbar
