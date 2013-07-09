@@ -143,6 +143,7 @@
 (add-to-list 'load-path "~/emacs_cfg/slime")
 (require 'slime-autoloads)
 (slime-setup '(slime-fancy))
+(add-hook 'slime-repl-mode-hook #'(lambda () (setq autopair-dont-activate t)))
 ;(slime-setup)
 ;----------------------------------------------------------;
 
