@@ -3,27 +3,32 @@
 (load-file "~/emacs_cfg/cedet-1.1/common/cedet.el")
 (add-to-list 'load-path "~/emacs_cfg/yasnippet-0.6.1c")
 ;----------------------------------------------------------;
-
 ;; cedet
 (global-ede-mode 1)
 
 (require 'semantic-gcc)
 (require 'semantic-ia)
+;(require 'semantic-clang)
 
 ;; semantic setup
 ;;(semantic-load-enable-minimum-features)
-;;(semantic-load-enable-code-helpers)
+(semantic-load-enable-code-helpers)
 ;;(semantic-load-enable-gaudy-code-helpers)
-(semantic-load-enable-excessive-code-helpers)
+;;(semantic-load-enable-excessive-code-helpers)
 
+;; debug helper
 (semantic-load-enable-semantic-debugging-helpers)
 
-(defun proteas-c-mode-cedet-hook ()
-  (local-set-key "." 'semantic-complete-self-insert)
-  (local-set-key ">" 'semantic-complete-self-insert))
+;; clang
+;(semantic-clang-activate)
 
-(add-hook 'c-mode-common-hook 'proteas-c-mode-cedet-hook)
-(add-hook 'c++-mode-common-hook 'proteas-c-mode-cedet-hook)
+;
+;(defun proteas-c-mode-cedet-hook ()
+;  (local-set-key "." 'semantic-complete-self-insert)
+;  (local-set-key ">" 'semantic-complete-self-insert)
+;)
+;(add-hook 'c-mode-common-hook 'proteas-c-mode-cedet-hook)
+;(add-hook 'c++-mode-common-hook 'proteas-c-mode-cedet-hook)
 
 (global-set-key [f10] 'semantic-ia-fast-jump)
 (global-set-key [S-f10]
@@ -41,7 +46,7 @@
 
 (require 'cc-mode)
 (define-key c-mode-base-map [M-S-f10] 'semantic-analyze-proto-impl-toggle)
-(define-key c-mode-base-map (kbd "M-/") 'semantic-ia-complete-symbol-menu)
+;(define-key c-mode-base-map (kbd "M-/") 'semantic-ia-complete-symbol-menu)
 
 (require 'eassist nil 'noerror)
 (define-key c-mode-base-map [M-f12] 'eassist-switch-h-cpp)
@@ -89,7 +94,7 @@
         )
 )
 (define-key c-mode-base-map [(tab)] 'proteas-indent-or-complete)
-(define-key c-mode-base-map [(meta ?/)] 'semantic-ia-complete-symbol-menu)
+;(define-key c-mode-base-map [(meta ?/)] 'semantic-ia-complete-symbol-menu)
 ;----------------------------------------------------------;
 
 ;; ecb
@@ -109,11 +114,31 @@
 (load-library "multi-gdb-ui.el")
 ;----------------------------------------------------------;
 
+;; header search path
+(defcustom proteas-system-include-paths '("/usr/include/c++/4.2.1" "/usr/local/include" "/usr/include")
+  "header search path"
+  :type '(repeat directory))
+
 ;; auto complete
 (add-to-list 'load-path "~/emacs_cfg/auto-complete-1.3.1")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/emacs_cfg/auto-complete-1.3.1/dict")
 (ac-config-default)
+
+;;config clang
+(require 'auto-complete-clang)
+(setq ac-auto-start nil)
+(setq ac-quick-help-delay 0.5)
+(setq clang-completion-suppress-error 't)
+(setq ac-clang-flags
+      (mapcar (lambda (item)(concat "-I" item))
+              (append proteas-system-include-paths)))
+
+(defun proteas-ac-clang-mode-common-hook()
+  (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang))
+ 
+(add-hook 'c-mode-common-hook 'proteas-ac-clang-mode-common-hook)
+(add-hook 'c++-mode-common-hook 'proteas-ac-clang-mode-common-hook)
 ;----------------------------------------------------------;
 
 ;; yasippet template
